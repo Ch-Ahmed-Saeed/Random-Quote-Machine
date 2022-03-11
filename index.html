@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Random Quote machine</title>
+
+<style>
+
+body {
+	background: #0084b8;
+}
+#quote-box {
+	height: 300px;
+	display: block;
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.19);
+	display: flex-column;
+	align-items: center;
+	  position: absolute;
+  	top: 0;
+  	bottom: 0;
+  	right: 0;
+  	left: 0;
+  	margin: auto;
+	max-width: 400px;
+	padding: 40px 20px 5px 40px;
+	min-width: 400px;
+}
+
+#text {
+	color: #fff;
+	font-size: 34px;
+	font-family: arial;
+	display: block;
+}
+
+#new-quote, #tweet-quote {
+	height: 50px;
+	width: 120px;
+	background: #2233ff;
+	border: 1px solid #fff;
+	border-radius: 3px;
+	font-size: 16px;
+	color: #fff;
+
+	bottom: 20%;
+}
+	#tweet-quote {
+		margin-right: 100px;
+
+	}
+#tweet-quote>a {
+	color: #fff;
+	text-decoration: none;
+	font-style: italic;
+}
+#text {
+	color: black;
+}
+</style>	
+
+</head>
+<body id="SiteBody">
+
+	<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+	
+
+
+	<wrapper id="quote-box"> 
+	
+			<p id="text">"This is my first quote on here"</p><br>
+		
+
+		<p id="author">
+			
+		</p>
+
+		
+
+		<a id="tweet-quote" href="twitter.com/intent/tweet"> Tweet this quote </a> 
+
+		<button id="new-quote" onClick="callDouble()"> New Quote </button>
+
+		
+	</wrapper>
+
+
+
+<script  type="text/javascript" >
+
+	var myArr = [
+
+				"I am quote 1",
+				"I am quote no 2 lala quote no 2 lala ",
+				"I am quote 3",
+				"I am quote 4",
+				"I am quote 5"
+	]
+
+	var myColors = [
+
+				"green",
+				"blue",
+				"brown",
+				"pink",
+				"purple"
+	]
+
+	console.log(myArr[0]);
+
+
+
+
+	const callDouble =()=> {
+
+		changeHandle();
+		ChangeTextColor();
+		ChangeButtonColor()
+		
+		ChangeBodyColor();
+	}
+
+
+
+	/* randoming functions: */
+
+	/* for quotes */
+
+	function randomArr(myArr){
+		return myArr[Math.floor(Math.random() * myArr.length)]
+	}
+// ___________________________________________________________________________
+	
+		/* for colors */
+
+	function randomColor(myColors){
+		return myColors[Math.floor(Math.random() * myColors.length)]
+	}
+
+	// Checking randoms :
+
+	console.log(randomArr(myArr));
+	console.log(randomColor(myColors));
+
+
+	function changeHandle(){
+		document.getElementById("text").innerHTML = randomArr(myArr)
+	}
+
+	function ChangeBodyColor(){
+		document.getElementById("SiteBody").style.background = randomColor(myColors);
+	}
+
+	function ChangeTextColor(){
+		document.getElementById("text").style.color = randomColor(myColors);
+	}
+
+
+
+	function ChangeButtonColor(){
+		document.getElementById("new-quote").style.background = randomColor(myColors);
+	}
+
+
+
+	
+	// var result  = document.querySelectorAll("#text p[0]").innerHTML;
+	// var resultQS = document.querySelector('#text p').innerHTML
+	// var resultGEBId = document.getElementById("text").innerHTML
+	// document.write(result)
+	// console.log(result)
+
+
+</script>
+
+</body>
+</html>
